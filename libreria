@@ -1,0 +1,43 @@
+@startuml
+class Libreria {
+  -nombre: String
+  -libros: List<Libro>
+  -video: List<Video>
+  -pdf: List<PDF>
+  -periodico: List<Periodico>
+  -fotografia: List<Fotografia>
+  +agregarLibro(libro: Libro): void
+  +agregarVideo(video: Video): void
+  +agregarPDF(pdf: PDF): void
+  +agregarPeriodico(periodico: Periodico): void
+  +agregarFotografia(fotografia: Fotografia): void
+}
+
+class Video {
+  -año: String
+  -autor: String
+}
+
+class Libro {
+  -autor: String
+  -genero: String
+}
+
+class PDF {
+  -titulo: String
+  -autor: String
+}
+class Periodico {
+  -encabezado: String
+  -autor: String
+}
+class Fotografia {
+  -nombre: String
+  -autor: String
+}
+Libreria "1" *-- "*" Libro : Contiene
+Libreria "1" *-- "*" Video : Contiene
+Libreria "1" *-- "*" Periodico : Contiene
+Libreria "1" *-- "*" PDF : Contiene
+Libreria "1" *-- "*" Fotografia : Contiene
+@enduml
